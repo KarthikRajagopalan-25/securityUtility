@@ -47,11 +47,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		return NoOpPasswordEncoder.getInstance();
 	}
 
-	@Bean
-	public UserDetailsService userDetailsService(DataSource dataSource) {
-		return new JdbcUserDetailsManager(dataSource);
-	}
+	//Using JDBC  of default user class and USerdetails class
 	
-	//Using JDBC 
+	/*
+	 * @Bean public UserDetailsService userDetailsService(DataSource dataSource) {
+	 * return new JdbcUserDetailsManager(dataSource); }
+	 */
+	// To make  our own custome table retrival authentication need to use jpa to create entity and repository then create a service by implementing userDetailsService /manager 
+	
+	
+
 	
 }
